@@ -123,7 +123,7 @@ class visualizer(ShowBase):
             finalColorValues.append(abs(self.previousColor[i]*(1-self.modelNum/numModels)-self.currentColor[i]*(self.modelNum/numModels))*0.8+0.2)
         modelIso.setColor(finalColorValues[0],finalColorValues[1],finalColorValues[2],1)
         modelIso.setPos(rotatedVertices[3])
-        modelIso.setScale(0.6,0.6,0.6)
+        modelIso.setScale(5,5,5)
         modelIso.reparentTo(self.render)
         for sNode in self.segmentNodes:
             render.attachNewNode(sNode)
@@ -174,5 +174,5 @@ try:
 except:
     print("Error: unable to start thread")
 
-app.changeSegments(25,25,25)
+app.changeSegments(2,25,25)
 app.run()
